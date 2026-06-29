@@ -9,8 +9,9 @@ define view entity ZCDS_VUELO_17
     on carrier.carrier_id = flight.carrier_id
 
 {
-  key
-  carrier.name         as Nombre,
+  key carrier.name     as Nombre,
   flight.connection_id as Conexion,
-  flight.flight_date   as Fecha
+  flight.flight_date   as Fecha,
+  flight.price         as Precio,
+  flight.currency_code as Moneda
 }

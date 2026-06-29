@@ -50,7 +50,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_productos_17 IMPLEMENTATION.
+CLASS ZCL_PRODUCTOS_17 IMPLEMENTATION.
+
 
   METHOD insertar.
 
@@ -64,6 +65,7 @@ CLASS zcl_productos_17 IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD buscar_por_id.
 
     SELECT SINGLE * FROM zproductos_17 WHERE producto_id = @i_producto_id INTO @o_estructura.
@@ -76,10 +78,12 @@ CLASS zcl_productos_17 IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD listar_todos.
 
 
   ENDMETHOD.
+
 
   METHOD modificar.
 
@@ -92,6 +96,7 @@ CLASS zcl_productos_17 IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD borrar.
 
     DELETE FROM zproductos_17 WHERE producto_id = @i_producto_id.
@@ -102,5 +107,4 @@ CLASS zcl_productos_17 IMPLEMENTATION.
       o_valido = abap_false.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

@@ -1,0 +1,23 @@
+managed implementation in class zcl_bp_bebidas_17 unique;
+strict ( 2 );
+
+define behavior for ZI_BEBIDAS_17 //alias Bebida
+persistent table zbebidas_17
+lock master
+authorization master ( global )
+
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Codigo;
+  mapping for zbebidas_17
+    {
+      Codigo     = codigo;
+      Nombre     = nombre;
+      Tipo       = tipo;
+      Origen     = origen;
+      Graduacion = graduacion;
+      Precio     = precio;
+    }
+}

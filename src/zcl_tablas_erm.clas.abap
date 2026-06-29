@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_tablas_erm IMPLEMENTATION.
+CLASS ZCL_TABLAS_ERM IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -185,13 +185,4 @@ out->write( |Las fechas son { lv_mes }| ).
     out->write( |La suma de todos los precios es { lv_total }| ).
 
   ENDMETHOD.
-
-
-
-
-
-
-
-
-
 ENDCLASS.

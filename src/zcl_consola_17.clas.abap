@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_consola_17 IMPLEMENTATION.
+CLASS ZCL_CONSOLA_17 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -226,13 +226,143 @@ CLASS zcl_consola_17 IMPLEMENTATION.
 *      out->write( lt_reservas ).
 *    ENDIF.
 
-SELECT * FROM  zcds_vuelo_17 INTO TABLE @data(lt_vuelo).
+*SELECT * FROM  zcds_vuelo_17 INTO TABLE @data(lt_vuelo).
+*
+*IF sy-subrc = 0.
+*      out->write( lt_vuelo ).
+*    ENDIF.
 
-IF sy-subrc = 0.
-      out->write( lt_vuelo ).
-    ENDIF.
+*
+*DATA(lo_trabajador) = new zcl_empleado_17(
+*                                        i_nombre = 'Manolo'
+*                                        i_dni = '25689741A'
+*                                        i_salario_base = 1000
+* ).
+*
+*
+*  DATA(lo_trabajador_fijo) = new zcl_empleado_fijo_17(
+*                                        i_nombre = 'Gonzalo'
+*                                        i_dni = '25689741A'
+*                                        i_salario_base = 1000
+*                                        i_antiguedad = 5
+*
+* ).
+*
+* Data(lo_trabajador_temporal) = new zcl_empleado_temporal_17(
+*                                        i_nombre = 'Juan'
+*                                        i_dni = '25689741A'
+*                                        i_salario_base = 1000
+*                                        i_precio_hora = 5
+*                                        i_horas_trabajadas = 10
+*
+* ).
+*
+* out->write( lo_trabajador->get_ficha( ) ).
+* out->write( lo_trabajador_fijo->get_ficha(  ) ).
+* out->write( lo_trabajador_temporal->get_ficha(  ) ).
 
 
+*DATA var_string TYPE string.
+*DATA var_int TYPE i.
+*DATA var_date TYPE d.
+*data var_pack type p length 3 decimals 2.
+*
+*var_string = `12345`.
+*var_int = var_string.
+*
+*out->write( 'Conversion successful' ).
+*
+*var_string = `20230101`.
+*var_date = var_string.
+*
+*out->write( |String value: { var_string }| ).
+*out->write( |Date Value: { var_date date = user }| ).
+*
+*DATA long_char TYPE c LENGTH 10.
+*DATA short_char TYPE c LENGTH 5.
+*DATA result TYPE p LENGTH 3 DECIMALS 2.
+*
+*long_char = 'ABCDEFGHIJ'.
+*short_char = long_char.
+*
+*out->write( long_char ).
+*out->write( short_char ).
+*
+*result = 1 / 8.
+*
+*out->write( |1 / 8 is rounded to { result NUMBER = USER }| ).
+
+*
+*data(lv_hoy) = cl_abap_context_info=>get_system_date( ).
+*
+*data lv_nacimiento TYPE d VALUE '19900710'.
+*
+*out->write( | 'Hoy es ' { lv_hoy date = USER } ' y nací ' { lv_nacimiento date = USER }| ).
+*
+*DATA lv_dias type i.
+*DATA lv_meses type i.
+*DATA lv_semanas type i.
+*
+*lv_dias = lv_hoy - lv_nacimiento.
+*
+*out->write( | 'He vivido ' { lv_dias } ' días'| ).
+*
+*lv_semanas = lv_dias / 7.
+*
+*out->write( | 'He vivido ' { lv_semanas } ' semanas'| ).
+*
+*lv_meses = ( lv_hoy - lv_nacimiento ) / 30.
+*
+*out->write( | 'He vivido ' { lv_meses } ' meses'| ).
+*
+*    out->write( TEXT-001 ).
+*
+
+
+*    DATA(lv_dias) = cl_abap_context_info=>get_system_date( ).
+*
+*    SELECT FROM /dmo/flight
+*    FIELDS
+*           carrier_id,
+*           connection_id,
+*           flight_date,
+*           seats_max,
+*           seats_occupied,
+*            seats_max - seats_occupied  AS seats_free,
+*            DAYS_BETWEEN( flight_date, @lv_dias )  AS dias_restantes
+*
+*      INTO TABLE @DATA(lt_asientos).
+*
+*    out->write( lt_asientos ).
+
+*    DATA lv_hoy TYPE d.
+*    lv_hoy = '20260514'.
+
+
+
+
+SELECT FROM /dmo/flight
+        FIELDS
+            flight_date,
+
+            CASE is_valid( flight_date )
+              WHEN 0 THEN 'No es válido'
+              WHEN 1 THEN 'Es valido'
+            END AS texto_valido,
+
+            CASE weekday( flight_date )
+              WHEN 0 THEN 'Lunes'
+              WHEN 1 THEN 'Martes'
+              WHEN 2 THEN 'Miércoles'
+              WHEN 3 THEN 'Jueves'
+              WHEN 4 THEN 'Viernes'
+              WHEN 5 THEN 'Sábado'
+              WHEN 6 THEN 'Domingo'
+            END AS texto_dia
+
+        INTO TABLE @DATA(lt_flights).
+
+out->write( lt_flights ).
 
 
   ENDMETHOD.

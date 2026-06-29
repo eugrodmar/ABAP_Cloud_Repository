@@ -60,36 +60,44 @@ ENDCLASS.
 
 
 
-CLASS zcl_calculadora_17 IMPLEMENTATION.
+CLASS ZCL_CALCULADORA_17 IMPLEMENTATION.
+
 
   METHOD constructor.
     valor_actual = i_valor_actual.
     nombre = i_nombre.
   ENDMETHOD.
 
+
   METHOD get_valor_actual.
     o_valor_actual = valor_actual.
   ENDMETHOD.
+
 
   METHOD get_nombre.
     o_nombre = nombre.
   ENDMETHOD.
 
+
   METHOD set_nombre.
     nombre = i_nombre.
   ENDMETHOD.
+
 
   METHOD sumar.
     valor_actual = valor_actual + i_valor_actual.
   ENDMETHOD.
 
+
   METHOD restar.
     valor_actual = valor_actual - i_valor_actual.
   ENDMETHOD.
 
+
   METHOD multiplicar.
     valor_actual = valor_actual * i_valor_actual.
   ENDMETHOD.
+
 
   METHOD dividir.
 
@@ -103,6 +111,7 @@ CLASS zcl_calculadora_17 IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD potencia.
     DATA lv_acumulador TYPE i VALUE 1.
     DO i_valor_actual TIMES.
@@ -111,8 +120,8 @@ CLASS zcl_calculadora_17 IMPLEMENTATION.
     valor_actual = lv_acumulador.
   ENDMETHOD.
 
+
   METHOD reset.
     valor_actual = 0.
   ENDMETHOD.
-
 ENDCLASS.

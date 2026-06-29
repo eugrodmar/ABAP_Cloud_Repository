@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_PROF_17'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_PROF_17'
+  }
+}
+define service ZUI_PROF_17_O4 provider contracts odata_v4_ui {
+  expose ZC_PROF_17;
+}

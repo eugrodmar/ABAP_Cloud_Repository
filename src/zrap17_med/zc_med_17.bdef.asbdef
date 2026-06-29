@@ -1,0 +1,23 @@
+projection implementation in class ZBP_C_MED_17 unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZC_MED_17 alias ZcMed17
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+use action cambiar_estado;
+use action cambiar_precio;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+}

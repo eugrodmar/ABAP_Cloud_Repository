@@ -1,0 +1,54 @@
+managed implementation in class ZBP_R_MED_17 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_MED_17 alias ZrMed17
+persistent table ZMED_17
+extensible
+draft table ZMED_17_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   ID;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   ID;
+
+
+  create;
+  update;
+  delete;
+
+  action cambiar_precio result [1] $self;
+action cambiar_estado parameter ZMED_ESTADO_PARAM result [1] $self;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZMED_17 corresponding extensible
+  {
+    ID = ID;
+    Nombre = NOMBRE;
+    Estado = ESTADO;
+    Precio = PRECIO;
+    IsActive = IS_ACTIVE;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+}

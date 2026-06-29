@@ -47,28 +47,34 @@ ENDCLASS.
 
 
 
-CLASS zcl_cuadro_17 IMPLEMENTATION.
+CLASS ZCL_CUADRO_17 IMPLEMENTATION.
+
 
   METHOD constructor.
     titulo = i_titulo.
     fecha = i_fecha.
   ENDMETHOD.
 
+
   METHOD get_titulo.
     o_titulo = titulo.
   ENDMETHOD.
+
 
   METHOD get_fecha.
     o_fecha = fecha.
   ENDMETHOD.
 
+
   METHOD set_titulo.
     titulo = i_titulo.
   ENDMETHOD.
 
+
   METHOD set_fecha.
     fecha = i_fecha.
   ENDMETHOD.
+
 
   METHOD esta_en_exposicion.
     IF o_estado > 1800.
@@ -77,6 +83,7 @@ CLASS zcl_cuadro_17 IMPLEMENTATION.
       o_estado = abap_false.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD mostrar_ficha.
   DATA lv_estado TYPE string.

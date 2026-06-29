@@ -50,7 +50,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_bomb_17 IMPLEMENTATION.
+CLASS ZCL_BOMB_17 IMPLEMENTATION.
+
 
 METHOD constructor.
 
@@ -59,19 +60,23 @@ METHOD constructor.
 
   ENDMETHOD.
 
+
   METHOD get_habitacion.
     o_habitacion = habitacion.
   ENDMETHOD.
 
+
   METHOD set_habitacion.
     habitacion = i_habitacion.
   ENDMETHOD.
+
 
   METHOD get_estado.
 
   o_estado = estado.
 
   ENDMETHOD.
+
 
   METHOD mostrar_estado.
   IF estado = abap_true.
@@ -81,6 +86,7 @@ METHOD constructor.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD encender.
 
       IF estado = abap_false.
@@ -89,6 +95,7 @@ METHOD constructor.
     ENDIF.
 
   ENDMETHOD.
+
 
   METHOD apagar.
 

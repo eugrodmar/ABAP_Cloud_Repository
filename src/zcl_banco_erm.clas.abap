@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_banco_erm IMPLEMENTATION.
+CLASS ZCL_BANCO_ERM IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

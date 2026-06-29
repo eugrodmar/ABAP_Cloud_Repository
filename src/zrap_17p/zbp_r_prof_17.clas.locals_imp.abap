@@ -1,0 +1,24 @@
+CLASS LHC_ZR_PROF_17 DEFINITION INHERITING FROM CL_ABAP_BEHAVIOR_HANDLER.
+  PRIVATE SECTION.
+    METHODS:
+      GET_GLOBAL_AUTHORIZATIONS FOR GLOBAL AUTHORIZATION
+        IMPORTING
+           REQUEST requested_authorizations FOR ZrProf17
+        RESULT result,
+      subida_sueldo FOR MODIFY
+            IMPORTING keys FOR ACTION ZrProf17~subida_sueldo.
+ENDCLASS.
+
+CLASS LHC_ZR_PROF_17 IMPLEMENTATION.
+  METHOD GET_GLOBAL_AUTHORIZATIONS.
+  ENDMETHOD.
+  METHOD subida_sueldo.
+*    MODIFY ENTITIES OF Zr_Prof_17 IN LOCAL MODE
+*    ENTITY ZrProf17
+*    UPDATE FIELDS ( Salario )
+*    WITH VALUE #( FOR key IN keys (
+*    %tky = keys-%tky
+*    salario = keys-salario * 2 ) ).
+  ENDMETHOD.
+
+ENDCLASS.

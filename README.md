@@ -32,7 +32,7 @@ Conceptos trabajados:
 
 ---
 
-### [03 · RAP Model](src/zlibreria_17)
+### [03 · RAP Model](./zlibreria_17/)
 
 Ejercicios de **ABAP RESTful Application Programming**. Desarrollo de servicios OData listos para consumir desde SAP Fiori, siguiendo la arquitectura RAP sobre BTP.
 

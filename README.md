@@ -6,7 +6,7 @@ Cubre tres áreas del desarrollo ABAP Cloud moderno: modelado de datos con CDS V
 
 ---
 
-## Contenido
+## Contenido principal
 
 ### [CDS Views & CDS Queries](./src/zrepaso17/)
 

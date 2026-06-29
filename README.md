@@ -8,31 +8,22 @@ Cubre tres áreas del desarrollo ABAP Cloud moderno: modelado de datos con CDS V
 
 ## Contenido
 
-### [01 · CDS Views](./01_CDS_Views/)
+### [CDS Views & CDS Queries](./src/zrepaso17/)
 
-Ejercicios de modelado de datos sobre SAP HANA mediante **Core Data Services**. Incluye definición de vistas sobre tablas de base de datos, uso de campos calculados, asociaciones entre entidades y operaciones de selección y transformación de datos.
-
-Conceptos trabajados:
-- Definición de vistas básicas sobre tablas SAP
-- Campos calculados y expresiones
-- Asociaciones y joins entre entidades
-- Anotaciones de exposición de datos
-
----
-
-### [02 · CDS Queries](./02_CDS_Queries/)
-
-Consultas SQL sobre modelos CDS. Ejercicios de selección, filtrado, agrupación y transformación de datos utilizando las capacidades de SAP HANA Cloud como motor de base de datos.
+Cada ejercicio tiene dos partes que van en pareja: la **definición de la vista CDS** (`.ddls`) y la **clase ABAP que la consulta** (`.clas.abap`). La vista modela los datos sobre SAP HANA y la clase los ejecuta y muestra el resultado en consola.
 
 Conceptos trabajados:
-- Consultas SELECT sobre CDS Views
-- Filtros, ordenación y agregaciones
+- Definición de vistas sobre tablas SAP con joins entre entidades
+- Campos calculados, expresiones `CASE`, concatenaciones y conversiones de tipo
+- Anotaciones `@AbapCatalog`, `@Semantics` y `@EndUserText`
+- Consultas `SELECT` sobre CDS Views con ordenación y filtros
 - Operaciones con tablas internas en ABAP OO
 - Gestión de excepciones en consultas
 
+
 ---
 
-### [03 · RAP Model](./src/zlibreria_17/)
+### [RAP Model](./src/zlibreria_17/)
 
 Ejercicios de **ABAP RESTful Application Programming**. Desarrollo de servicios OData listos para consumir desde SAP Fiori, siguiendo la arquitectura RAP sobre BTP.
 

@@ -15,7 +15,6 @@ Cada ejercicio tiene dos partes que van en pareja: la **definición de la vista 
 Conceptos trabajados:
 - Definición de vistas sobre tablas SAP con joins entre entidades
 - Campos calculados, expresiones `CASE`, concatenaciones y conversiones de tipo
-- Anotaciones `@AbapCatalog`, `@Semantics` y `@EndUserText`
 - Consultas `SELECT` sobre CDS Views con ordenación y filtros
 - Operaciones con tablas internas en ABAP OO
 - Gestión de excepciones en consultas
